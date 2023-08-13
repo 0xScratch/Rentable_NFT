@@ -9,8 +9,6 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     });
     await run(`verify:verify`, {
         address: rentableNFT.address,
-
     });
-
 };
 module.exports.tags = ['RentableNFT'];

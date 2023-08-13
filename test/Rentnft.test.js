@@ -55,7 +55,6 @@ describe("RentNFT", function () {
             await Tx.wait();
             await expect(contract.setUser(nftid, addr2.address, rent_expire_time, { "from": owner.address })).to.be.revertedWith('User already assigned');
         });
-
     });
 
     describe("User NFt transfer", () => {
@@ -72,11 +71,7 @@ describe("RentNFT", function () {
             const Tx = await contract.setUser(nftid, addr1.address, rent_expire_time, { "from": owner.address });
             await Tx.wait();
             expect(contract.userExpires(1)).to.be.revertedWith("ERC721: caller is not token owner or approved");
-
-
         });
-
-
     });
 
     describe("NFTrent  expires", () => {
@@ -93,12 +88,6 @@ describe("RentNFT", function () {
             const Tx = await contract.setUser(nftid, addr1.address, rent_expire_time, { "from": owner.address });
             await Tx.wait();
             await expect(contract.userExpires(nftid) < (DAY));
-
-
         });
-
-
     });
-
-
 });
